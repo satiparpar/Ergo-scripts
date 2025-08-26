@@ -1,0 +1,39 @@
+{
+  "name": "Ergo-extractor",
+  "version": "0.0.0",
+  "description": "",
+  "repository": "",
+  "license": "GPL-3.0",
+  "author": "",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "lint": "eslint --fix . && npm run prettify",
+    "prepare": "husky install",
+    "prettify": "prettier --write . --ignore-path ./.gitignore",
+    "start": "tsx ./src/index.ts",
+    "start:dev": "tsx watch ./src/index.ts",
+    "type-check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@rosen-bridge/winston-logger": "^0.2.1",
+    "config": "^3.3.7",
+    "tsx": "^4.19.4"
+  },
+  "devDependencies": {
+    "@types/config": "^0.0.41",
+    "@types/node": "^20.11.9",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
+    "prettier": "^3.2.4",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=20.11.0"
+  }
+}
