@@ -1,5 +1,17 @@
 logs:
-  maxSize: 20m
-  maxFilesCount: 14d
-  path: ./logs/
-  level: info
+  - type: 'file' # [file, console]
+    path: './logs/' # path to log files (only for rotateFile type)
+    maxSize: '20m' # maximum size of each log file (20 MB) (only for rotateFile type)
+    maxFiles: '14d' # maximum number of log files (14 days) (only for rotateFile type)
+    level: 'info' # [debug, info, warn, error]
+  - type: 'console'
+    level: 'info'
+user:
+  mnemonic: '' # user mnemonic
+ergo:
+  minBoxValue: '1000000'
+  fee: '1000000'
+  explorer:
+    url: 'https://api.ergoplatform.com/api/v1'
+  node:
+    url: 'https://node.ergopool.io'
